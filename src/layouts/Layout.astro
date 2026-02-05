@@ -1,6 +1,5 @@
 ---
 import { Font } from "astro:assets";
-import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
 import "@/styles/global.css";
@@ -14,7 +13,6 @@ type Props = {
   canonicalURL?: string;
   pubDatetime?: Date;
   modDatetime?: Date | null;
-  scrollSmooth?: boolean;
 };
 
 const {
@@ -26,7 +24,6 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.url),
   pubDatetime,
   modDatetime,
-  scrollSmooth = false,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.url);
@@ -49,31 +46,19 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html
-  dir={SITE.dir}
-  lang=`${SITE.lang ?? "en"}`
-  class={`${scrollSmooth && "scroll-smooth"}`}
->
+<html dir={SITE.dir} lang=`${SITE.lang ?? "en"}`>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Load Font -->
     <Font
-      cssVariable="--font-google-sans-code"
-      preload={[
-        { subset: "latin", weight: 400, style: "normal" },
-        { subset: "latin", weight: 700, style: "normal" },
-      ]}
-    />
-    <Font
       cssVariable="--font-lxgw-bright-code"
       preload={[
         { weight: 400, style: "normal" },
-        { weight: 400, style: "italic" },
       ]}
     />
     
@@ -144,8 +129,6 @@ const structuredData = {
         />
       )
     }
-
-    <ClientRouter />
 
     <!-- Minimal inline script to prevent FOUC - sets theme immediately -->
     <script is:inline>

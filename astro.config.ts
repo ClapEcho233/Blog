@@ -68,6 +68,26 @@ export default defineConfig({
         weights: [300, 400, 500, 600, 700],
         styles: ["normal", "italic"],
       },
+      {
+        name: "LXGW Bright Code",
+        cssVariable: "--font-lxgw-bright-code",
+        provider: fontProviders.local(),
+        fallbacks: ["monospace"],
+        options: {
+          variants: [
+            {
+              weight: 400,
+              style: "normal",
+              src: ["./src/assets/fonts/LXGWBrightCode/LXGWBrightCode-Regular.woff2"]
+            },
+            {
+              weight: 700,
+              style: "italic",
+              src: ["./src/assets/fonts/LXGWBrightCode/LXGWBrightCode-Italic.woff2"]
+            }
+          ]
+        },
+      },
     ],
   },
 });

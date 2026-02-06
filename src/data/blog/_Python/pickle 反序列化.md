@@ -167,11 +167,11 @@ Pickle 是一种基于栈的序列化语言，它通过一系列操作码（opco
 
 PVM解析 str 的过程：
 
-<img src="/src/assets/images/Python/pickle-deserialization/PVM1.gif" width="400" />
+![](@/assets/images/Python/pickle-deserialization/PVM1.gif)
 
 PVM解析 \_\_reduce\_\_() 的过程：
 
-<img src="/src/assets/images/Python/pickle-deserialization/PVM2.gif" width="400" />
+![](@/assets/images/Python/pickle-deserialization/PVM2.gif)
 
 一个简单的例子：
 
@@ -423,7 +423,7 @@ if module == "builtins" and name in safe_builtins:
 
 可以通过 `for i in sys.modules['builtins'].__dict__:print(i)` 来查看该模块中包含的所有模块函数等，大致如下：
 
-<img src="/src/assets/images/Python/pickle-deserialization/2.png" width="500" />
+![](@/assets/images/Python/pickle-deserialization/2.png)
 
 假如内置函数中一些执行命令的函数也被禁用了，而我们仍想命令执行，那么漏洞的利用思路就类似于 Python 中的沙箱逃逸。
 

@@ -91,7 +91,7 @@ public class Main {
 
 查看 Transformer 接口：
 
-<img src="/src/assets/images/Java/CC1/CC11.png" width="700" />
+![](@/assets/images/Java/CC1/CC11.png)
 
 Ctrl + Alt + B 查看实现接口的类（或者对 `Transformer` 右键 `转到 -> 实现`）
 

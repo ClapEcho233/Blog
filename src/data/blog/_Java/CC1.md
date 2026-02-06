@@ -5,8 +5,10 @@ slug: java-cc1
 featured: false
 draft: false
 tags:
-  - Java 反序列化
-description: 分析 Apache Commons Collections CC1（TransformMap 版）反序列化漏洞的利用原理，梳理其完整调用路径
+  - Java
+  - 反序列化
+  - Commons Collections
+description: Apache Commons Collections 是一个扩展了 Java 标准库里的 Collection 结构的第三方基础库，它提供了很多强大的数据结构类型和实现了各种集合工具类。作为Apache开放项目的重要组件，Commons Collections 被广泛的各种 Java 应用的开发
 ---
 
 # 背景
@@ -89,7 +91,7 @@ public class Main {
 
 查看 Transformer 接口：
 
-![](@/assets/images/Java/CC1/CC11.png)
+<img src="/src/assets/images/Java/CC1/CC11.png" width="700" />
 
 Ctrl + Alt + B 查看实现接口的类（或者对 `Transformer` 右键 `转到 -> 实现`）
 
